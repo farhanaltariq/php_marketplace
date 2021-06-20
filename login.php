@@ -17,10 +17,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-            <a class="nav-link"  href="#">HOME</a>
-            <a class="nav-link" aria-current="page" href="#">PRODUCT</a>
-            <a class="nav-link active" href="#">LOGIN</a>
-            <a class="nav-link" href="#" tabindex="-1">CONTACT</a>
+            <a class="nav-link"  href="index.php">HOME</a>
+            <a class="nav-link" aria-current="page" href="home.php">PRODUCT</a>
+            <a class="nav-link active" href="login.php">LOGIN</a>
+            <a class="nav-link" href="home.php" tabindex="-1">CONTACT</a>
             <img src="./style/img/bag.png" style="width: 25px; height: 25px; margin-top: 5px; margin-left: 20px">
         </div>
         </div>
