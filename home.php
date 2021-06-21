@@ -10,15 +10,13 @@
     </head>
     <body>
     <style type="text/css">
-        h1 {
+        h1, h4 {
             text-align: center;
             font-size: 120px;
             font-family: Helvetica, Verdana, Arial;
         }
     </style>
     <h1>Sabar broh, belom jadi</h1>
-    <div class="text-center">
-        <a href="logout.php">Log Out</a>
-    </div>
+    <h4><a href="logout.php">Log Out</a></h4>
     </body>
 </html>
