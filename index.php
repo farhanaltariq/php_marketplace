@@ -9,22 +9,24 @@
 <link rel="stylesheet" href="./style/homeStyle.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-        <img src="./style/img/logo2.png" class="logo" alt="AeroStreet">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-            <a class="nav-link active"  href="index.php">HOME</a>
-            <a class="nav-link" aria-current="page" href="home.php">PRODUCT</a>
-            <a class="nav-link" href="login.php">LOGIN</a>
-            <a class="nav-link" href="home.php" tabindex="-1">CONTACT</a>
-            <img src="./style/img/bag.png" style="width: 25px; height: 25px; margin-top: 5px; margin-left: 20px">
+   <!-- Navigation Bar -->
+   <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <img src="./style/img/logo2.png" class="logo" alt="AeroStreet">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-auto" id="navbarTogglerDemo02">
+                <div class="navbar-nav ml-auto">
+                    <a style="margin-left: 50px;" class="nav-link active"  href="index.php">HOME</a>
+                    <a style="margin-left: 50px;" class="nav-link" aria-current="page" href="home.php">PRODUCT</a>
+                    <a style="margin-left: 50px;" class="nav-link" href="login.php">LOGIN</a>
+                    <a style="margin-left: 50px;" class="nav-link" href="https://api.whatsapp.com/send?phone=6281230447023&text=Hai%20Farhan,%20kamu%20sangat%20tampan.">CONTACT</a>
+                </div>
+                <img src="./style/img/bag.png" style="width: 25px; height: 25px; margin-top: 5px; margin-left: 50px; margin-right: 50px;">
+            </div>
         </div>
-        </div>
-    </div>
+    </nav>
     </nav>
     <div class="container position-absolute top-50 start-50 translate-middle text-center">
         <div class="jumbotron">
