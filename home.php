@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    include 'connection.php';
+    if(!isset($_SESSION['userweb']))
+        header("location:index.php");
+?>
 <html>
     <head>
         <title>Hehe</title>
@@ -11,6 +17,8 @@
         }
     </style>
     <h1>Sabar broh, belom jadi</h1>
-
+    <div class="text-center">
+        <a href="logout.php">Log Out</a>
+    </div>
     </body>
 </html>

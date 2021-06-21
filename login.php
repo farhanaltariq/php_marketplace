@@ -1,14 +1,13 @@
+<?php
+    session_start();
+    include "connection.php";
+?>
 <!DOCTYPE html>
 <html>
 <head><title>AeroStreet Login</title>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <link rel="stylesheet" href="./style/loginStyle.css">
-<script type="text/javascript">
-    function submitform(){
-        document.getElementById("form").submit();
-    }
-</script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -43,37 +42,6 @@
                     <input name="password" placeholder="Password" type="password" class="form-control field" id="exampleInputPassword1">
                 </div>
                 <div class="mb-3">
-                    <?php
-                        //check if login form are clicked
-                        include_once("connection.php");
-                        if(isset($_POST['login'])){
-                            //check is there has an empty form
-                            if($_POST['email']=="" || $_POST['password']==""){
-                            echo "<div class='alert-sm text-primary'>";
-                            echo "Email dan password tidak boleh kosong";
-                            echo "</div>";
-                            } else{
-                            //validating account data
-                            $email = $_POST['email'];
-                            $password = $_POST['password'];
-                            $qry = mysqli_query($connect, "SELECT * FROM user WHERE email = '$email' AND password = md5('$password')");
-                            $check = mysqli_num_rows($qry);
-                            //redirect if inputted valid data
-                            if($check){
-                                $_SESSION['userweb'] = $email;
-                                echo "<form id='form' method='POST' action='index.php'>";
-                                echo "<input type='text' name='uname' value='$email' hidden>";
-                                echo "<script type=\"text/javascript\">submitform()</script>";
-                                echo "</form>";
-                                exit;
-                            }else {
-                                echo "<div class='alert-sm text-danger'>";
-                                echo "Email atau password salah";
-                                echo "</div>";
-                            }
-                            }
-                        }
-                        ?>
                     <a class="hover" href="hehe.php" style="padding-right: 10px;">Forgot your password ?</a>
                     <button type="submit" class="btn btn-light" style="margin-left: 30px" name="login">login</button>
                 </div>
@@ -84,4 +52,37 @@
         </div>
     </div>
 </body>
+<?php
+//check if login form are clicked
+if(isset($_POST['login'])){
+    //check is there has an empty form
+    if($_POST['email']=="" || $_POST['password']==""){
+    echo "<div class='alert-sm text-primary'>";
+    echo "Email dan password tidak boleh kosong";
+    echo "</div>";
+    } else{
+        //validating account data
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $qry = mysqli_query($connect, "SELECT * FROM user WHERE email = '$email' AND password = md5('$password')");
+        $check = mysqli_num_rows($qry);
+        //redirect if inputted valid data
+        if($check){
+            $_SESSION['userweb'] = $email;
+            echo "<form method='POST' id='okform' action='home.php' hidden>";
+            echo "<input type='email' name='mail' value='$email'>";
+            echo "<button type='submit' id='click'>OK</button>";
+            echo "<script type=\"text/javascript\">
+                    document.getElementById('okform').submit();
+                    </script>";
+            echo "</form>";
+            exit;
+        }else {
+            echo "<div class='alert-sm text-danger'>";
+            echo "Email atau password salah";
+            echo "</div>";
+        }
+    }
+}
+?>
 </html>
