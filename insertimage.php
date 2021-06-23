@@ -34,7 +34,7 @@ if(isset($_POST["submit"]))
     	echo '<script type="text/javascript"> alert("Error Uploading Data!"); </script>';  // when error occur
     }
 
-    mysqli_close($db);  // close connection 
+    mysqli_close($connect);  // close connection 
   }
 ?>
 

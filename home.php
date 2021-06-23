@@ -13,8 +13,8 @@
         <link rel="stylesheet" href="./style/productStyle.css">
     </head>
     <body>
-    <div class="position-absolute start-50 top-50 translate-middle">
-        <table class="table table-dark">
+    <div class="position-absolute start-50 top-50 translate-middle" style="border: 2px solid red;">
+        <table class="table table-dark" style="width:800px;">
         <?php
             $sql = "SELECT * FROM product";
             $result = $connect->query($sql);
@@ -22,10 +22,14 @@
             if($result->num_rows>0){
             while ($row = $result->fetch_assoc()){
             $counter++;
-            echo "<tr>" .
-                    // "<th scope='row'> $counter </th>" .
-                    "<td> <img src='{$row['img']}' width='200px' height='200px'> </td>";
-                }
+                echo $counter;
+                if($counter%3==0)
+                    echo "<tr>";
+                echo "<td> <img src='{$row['img']}' width='100px' height='100px'>$counter".
+                        "<br>{$row['id']}".
+                    "</td>";
+                if($counter%3==0)
+                    echo "</tr>";                }
             }
             mysqli_close($connect);
         ?>
