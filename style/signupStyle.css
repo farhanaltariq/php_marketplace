@@ -69,3 +69,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.prs{
+    width: 200px;
+    border-radius: 15px;
+}

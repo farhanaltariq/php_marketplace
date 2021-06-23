@@ -19,11 +19,11 @@
                     <input name="email" placeholder="Email" type="email" class="form-control field" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <input name="password" placeholder="Password" type="password" class="form-control field" id="exampleInputPassword1">
                     <input name="name" placeholder="Name" type="text" class="form-control field" id="exampleInputEmail1">
-                    <input name="birthday" placeholder="Birthday" type="date" class="form-control field" id="exampleInputEmail1">
+                    <input name="birthdate" placeholder="Birthday" type="date" class="form-control field" id="exampleInputEmail1">
                 </div>
                 <div class="right-form mb-3">
                     <input name="re-password" placeholder="Re-Type Password" type="password" class="form-control field" id="exampleInputPassword1">
-                    <select id="cars" name="cars" class="form-control field">
+                    <select id="cars" name="gender" class="form-control field">
                         <option value="" disabled selected>Gender</option>
                         <option value="MALE">Male</option>
                         <option value="FEMALE">Female</option>
@@ -48,7 +48,7 @@
                     <label for="agreement">License Agreement</label>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <button type="submit" class="btn btn-primary prs">Sign Up</button>
                 </div>
             </form>
         </div>
