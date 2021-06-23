@@ -13,29 +13,23 @@
         <link rel="stylesheet" href="./style/productStyle.css">
     </head>
     <body>
-    <table class="table table-dark">
-    <?php
-        $sql = "SELECT * FROM product";
-        $result = $connect->query($sql);
-        $counter = 0;
-        if($result->num_rows>0){
-         while ($row = $result->fetch_assoc()){
-           $counter++;
-           echo "<tr>" .
-                "<th scope='row'> $counter </th>" .
-                "<td> {$row['tipe']} </td>" .
-                "<td> {$row['harga']} </td>" .
-                "<td> {$row['ukuran']} </td>" .
-                "<td> <img src='{$row['img']}'> </td>";
+    <div class="position-absolute start-50 top-50 translate-middle">
+        <table class="table table-dark">
+        <?php
+            $sql = "SELECT * FROM product";
+            $result = $connect->query($sql);
+            $counter = 0;
+            if($result->num_rows>0){
+            while ($row = $result->fetch_assoc()){
+            $counter++;
+            echo "<tr>" .
+                    // "<th scope='row'> $counter </th>" .
+                    "<td> <img src='{$row['img']}' width='200px' height='200px'> </td>";
+                }
             }
-        }
-        mysqli_close($connect);
-    ?>
-    </table>
-    <center>
-        <h1>Sabar broh, belom jadi</h1>
-        <h1><a href="index.php">Home</a></h1>
-        <h1><a href="logout.php">Log Out</a></h1>
-    </center>
+            mysqli_close($connect);
+        ?>
+        </table>
+    </div>
     </body>
 </html>

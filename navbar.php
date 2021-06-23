@@ -1,3 +1,11 @@
+<?php
+    //session_start();
+    include 'connection.php';
+    if(isset($_SESSION['userweb']))
+        $text = "LOGOUT";
+    else
+        $text = "LOGIN";
+?>
 <html>
     <head>  
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
@@ -29,7 +37,7 @@
                 <div class="navbar-nav ml-auto">
                     <a style="margin-left: 50px;" class="nav-link"  href="index.php">HOME</a>
                     <a style="margin-left: 50px;" class="nav-link" aria-current="page" href="home.php">PRODUCT</a>
-                    <a style="margin-left: 50px;" class="nav-link" href="login.php">LOGIN</a>
+                    <a style="margin-left: 50px;" class="nav-link" href="<?= strtolower($text)?>.php"><?= $text ?></a>
                     <a style="margin-left: 50px;" class="nav-link" href="https://api.whatsapp.com/send?phone=6281230447023&text=Hai%20Farhan,%20kamu%20sangat%20tampan.">CONTACT</a>
                 </div>
                 <img src="./style/img/bag.png" style="width: 25px; height: 25px; margin-top: 5px; margin-left: 50px; margin-right: 50px;">
