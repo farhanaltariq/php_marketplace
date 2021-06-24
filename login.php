@@ -63,6 +63,20 @@
             echo "</form>";
             exit;
         }else {
+            $qry = mysqli_query($connect, "SELECT * FROM admin WHERE email = '$email' AND password = md5('$password')");
+            $check = mysqli_num_rows($qry);
+            //redirect if inputted valid data
+            if($check){
+                $_SESSION['userweb'] = $email;
+                echo "<form method='POST' id='okform' action='insertimage.php' hidden>";
+                echo "<input type='email' name='mail' value='$email'>";
+                echo "<button type='submit' id='click'>OK</button>";
+                echo "<script type=\"text/javascript\">
+                        document.getElementById('okform').submit();
+                        </script>";
+                echo "</form>";
+                exit;
+            }
             echo "<div class='alert alert-danger'>";
             echo "Incorrect email or password";
             echo "</div>";
