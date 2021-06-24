@@ -4,7 +4,7 @@
   <title>Insert image in MySQL database in PHP</title>
 </head>
 <body>
-////
+
 <?php
 
 include "connection.php"; // Using database connection file here
