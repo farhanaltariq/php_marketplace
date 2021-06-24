@@ -15,7 +15,7 @@
             "VALUES ('$email', md5('$password'), '$name', '$birthdate', '$gender', '$profession', '$address', '$instagram', '$phone');";
     $sql = mysqli_query($connect, $qry);
     if($sql)
-        echo "<br>WES DITAMBAHKE COK";
+        header("location:home.php");
     else
         echo "<br>RAKENEK";
             // if (isset($_POST['submit'])) {
