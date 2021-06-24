@@ -13,7 +13,7 @@
 <body style="color: black;">   
     <div class="loginradius container position-absolute top-50 start-50 translate-middle">
         <div class="container-fuid signupform" style="box-sizing: border-box;">
-            <div class="text-start" style="margin-top: 30px; margin-left: 20px;"><b>Create Your Account !</b></div>
+            <div class="text-start" style="margin-top: 30px; margin-left: 20px;"><b>buat Create Your Account !</b></div>
             <form method="post" action="adduser.php">
                 <div class="left-form mb-3">
                     <input name="email" placeholder="Email" type="email" class="form-control field" id="exampleInputEmail1" aria-describedby="emailHelp">
