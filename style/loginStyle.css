@@ -30,6 +30,7 @@ body{
 .field{
     color:white;
     background-color: rgba(169, 169, 169, 0.212);
+    border-radius: 10px;
 }
 a, a:active{
     text-decoration: none;
@@ -43,5 +44,4 @@ a, a:active{
     box-sizing: border-box;
     padding-top: 1cm;
     margin-top: 20px;
-    margin-left: 400px;
 }

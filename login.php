@@ -18,21 +18,28 @@
         <div class="loginform">
             <div class="text-start" style="margin-bottom: 50px;"><b>Login Here !</b></div>
             <form method="post">
-                <div class="mb-3">
-                    <input name="email" placeholder="Email" type="email" class="form-control field rounded" id="exampleInputEmail1" aria-describedby="emailHelp">
+                 <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label"><img src="./style/img/user.png" alt="" width=40px height=40px></label>
+                    <div class="col-sm-10">
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email">
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <input name="password" placeholder="Password" type="password" class="form-control field" id="exampleInputPassword1">
-                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label"><img src="./style/img/user.png" alt="" width=40px height=40px></label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                    </div>
                 <div class="mb-3">
                     <a class="hover" href="hehe.php" style="padding-right: 10px;">Forgot your password ?</a>
                     <button type="submit" class="btn btn-light" style="margin-left: 30px" name="login">login</button>
                 </div>
             </form>
-        </div>
-        <div class="newacc">
+            <div class="newacc">
             Don't have an account ? create your account <a style="color:orange;" href="signup.php">here</a>
         </div>
+        </div>
+        
     </div>
 </body>
 <?php

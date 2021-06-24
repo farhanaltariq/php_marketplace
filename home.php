@@ -25,7 +25,7 @@
                 echo $counter;
                 if($counter%3==0)
                     echo "<tr>";
-                echo "<td> <img src='{$row['img']}' width='100px' height='100px'>$counter".
+                echo "<td> <center><img src='{$row['img']}' width='200px' height='70%'> </center>$counter".
                         "<br>{$row['id']}".
                     "</td>";
                 if($counter%3==0)
