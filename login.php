@@ -13,8 +13,6 @@
 <link rel="stylesheet" href="./style/loginStyle.css">
 </head>
 <body>
-        
-    
     <div class="loginradius container position-absolute top-50 start-50 translate-middle">
         <div class="loginlogo position-absolute top-0 start-0 text-center""></div>
         <div class="loginform">
