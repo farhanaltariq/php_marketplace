@@ -1,75 +1,95 @@
-.loginradius{
-    background-color: white;
-    border-radius: 30px;
-    width: 750px;
-    height: 600px;
-    border-width: 1px;
-    border: 1px solid blue;
-    padding: 50px;
-    box-sizing: border-box;
+.register{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
 }
-body{
-    background: url("./img/bg_blur.png") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;;
-    color: black;
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
 }
-.loginlogo{
-    background-image: url("./img/spatulogin.png");
-    background-size: 400px 400px;
-    border-top-left-radius: 5%;
-    border-bottom-left-radius: 5%;
-    width: 400px;
-    height: 400px;
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
 }
-.navbar-nav{
-    margin-left: auto;
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
 }
-.logo{
-    margin-left: 50px;
-    margin-bottom: 10px;
-    width: 100px;
-    height: 40px;
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
 }
-.signupform{
-    box-sizing: border-box;
-    justify-content: space-around;
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
 }
-.field{
-    color:black;
-    background-color: rgba(169, 169, 169, 0.212);
-    margin-top: 15px;
-    border-radius: 10px;
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
 }
-a, a:active{
-    text-decoration: none;
-    color: white;
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
 }
-.left-form{
-    width: 300px;
-    box-sizing: border-box;
-    float:left;
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
 }
-.right-form{
-    margin-top: 50px;
-    width: 300px;
-    box-sizing: border-box;
+.btnRegister{
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
     float: right;
 }
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
 }
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+.register .nav-tabs .nav-link:hover{
+    border: none;
 }
-.prs{
-    width: 200px;
-    border-radius: 15px;
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #0062cc;
+    border: 2px solid #0062cc;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
 }
