@@ -47,8 +47,9 @@
 <div class="container">
   <center><h2><b>ADMIN MODE</b></h2></center>
   <hr>
+  <a href="addPrdoduct.php"><button class="btn btn-primary">Add Product</button></a>
   <form method="post" enctype="multipart/form-data">
-    <table class="table">
+    <table class="table text-center">
       <tr>
         <th>ID</th>
         <th>Type</th>
@@ -56,8 +57,7 @@
         <th>Size</th>
         <th>Stock</th>
         <th>Image</th>
-        <th></th>
-        <th></th>
+        <th colspan=2>Action</th>
       </tr>
       
       <?php
@@ -74,7 +74,7 @@
             "<td><input name='ukuran' type='text' value='{$row['ukuran']}'</td>".
             "<td><input name='stok' type='text' value='{$row['stok']}'</td>".
             "<td><center><img src='{$row['img']}' width='70px' height='70px'><br>".
-            "<input name='img' type='file' value='{$row['img']}'></center></td>".
+            "<input name='img' type='file' value='{$row['img']}' style='margin-top:0px;'></center></td>".
             "<td><button class='btn btn-warning' type='submit' name='update'>Update</td>".
             "</form>";
             
@@ -88,17 +88,6 @@
     </table>
   </form>
   </div>
-<center>
-<h4>Add Product</h4>
-<div class="container">
-  <form method="post" enctype="multipart/form-data">
-        
-        <label for="image"></label>
-        <input type="file" name="image" Required><br>
-        <button type="submit" name="addProduct">Upload</button>
-  </form>
-</div>
-</center>
 </body>
 </html>
 

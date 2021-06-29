@@ -2,6 +2,10 @@ body{
     background-color: darkgrey;
 }
 input{
-    width: 100px;
+    width: 80px;
     border: none;
+    border-bottom: 1px dotted black;
+    background-color: darkgrey;
+    margin-top: 40px;
+    margin-bottom: 0px;
 }
