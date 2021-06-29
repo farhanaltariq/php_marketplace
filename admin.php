@@ -73,8 +73,8 @@
             "<td><input name='harga' type='text' value='{$row['harga']}'</td>".
             "<td><input name='ukuran' type='text' value='{$row['ukuran']}'</td>".
             "<td><input name='stok' type='text' value='{$row['stok']}'</td>".
-            "<td><img src='{$row['img']}' width='70px' height='70px'><br>".
-            "<input name='img' type='file' value='{$row['img']}'></td>".
+            "<td><center><img src='{$row['img']}' width='70px' height='70px'><br>".
+            "<input name='img' type='file' value='{$row['img']}'></center></td>".
             "<td><button class='btn btn-warning' type='submit' name='update'>Update</td>".
             "</form>";
             
