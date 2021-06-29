@@ -1,7 +1,9 @@
-body{
+body {
     background: black;
     color: white;
 }
-a, a:active{
+
+a,
+a:active {
     text-decoration: none;
 }
