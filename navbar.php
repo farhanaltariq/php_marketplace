@@ -26,7 +26,7 @@
                 <a href="#">My Order</a>
             </div>
             <span class="stripes" style="font-size:30px; margin-left:20px; margin-right: 20px; color: white;" onclick="openNav()">&#9776;</span>
-            <img src="./style/img/logo2.png" class="logo" alt="AeroStreet">
+            <a href="index.php"><img src="./style/img/logo2.png" class="logo" alt="AeroStreet"></a>
 
             
             <!-- Navigation Bar -->
