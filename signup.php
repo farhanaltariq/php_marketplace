@@ -16,35 +16,35 @@
             <div class="text-start" style="margin-top: 30px; margin-left: 20px;"><b>Create Your Account !</b></div>
             <form method="post" action="adduser.php">
                 <div class="left-form mb-3">
-                    <input name="email" placeholder="Email" type="email" class="form-control field" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <input name="password" placeholder="Password" type="password" class="form-control field" id="exampleInputPassword1">
-                    <input name="name" placeholder="Name" type="text" class="form-control field" id="exampleInputEmail1">
-                    <input name="birthdate" placeholder="Birthday" type="date" class="form-control field" id="exampleInputEmail1">
+                    <input required name="email" placeholder="Email" type="email" class="form-control field" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input required name="password" placeholder="Password" type="password" class="form-control field" id="exampleInputPassword1">
+                    <input required name="name" placeholder="Name" type="text" class="form-control field" id="exampleInputEmail1">
+                    <input required name="birthdate" placeholder="Birthday" type="date" class="form-control field" id="exampleInputEmail1">
                 </div>
                 <div class="right-form mb-3">
-                    <input name="re-password" placeholder="Re-Type Password" type="password" class="form-control field" id="exampleInputPassword1">
-                    <select id="cars" name="gender" class="form-control field">
+                    <input required name="re-password" placeholder="Re-Type Password" type="password" class="form-control field" id="exampleInputPassword1">
+                    <select required id="cars" name="gender" class="form-control field">
                         <option value="" disabled selected>Gender</option>
                         <option value="MALE">Male</option>
                         <option value="FEMALE">Female</option>
                     </select>
-                    <input name="profession" placeholder="Profession" type="text" class="form-control field" id="exampleInputEmail1">
+                    <input required name="profession" placeholder="Profession" type="text" class="form-control field" id="exampleInputEmail1">
                 </div>
                 <div class="mb-3">
-                    <input name="address" placeholder="Address" type="text" class="form-control field" id="exampleInputEmail1">
+                    <input required name="address" placeholder="Address" type="text" class="form-control field" id="exampleInputEmail1">
                 </div>
                 <div>
                     Confirmation
                 </div>
                 <div class="left-form mb-3">
-                    <input name="instagram" placeholder="Instagram" type="text" class="form-control field" id="exampleInputEmail1" >
+                    <input required name="instagram" placeholder="Instagram" type="text" class="form-control field" id="exampleInputEmail1" >
                 </div>
                 <div class="right-form mb-3" style="margin-top: 0px;">
-                    <input name="phone" placeholder="Phone" type="number" class="form-control field" id="exampleInputPassword1">
+                    <input required name="phone" placeholder="Phone" type="number" class="form-control field" id="exampleInputPassword1">
                 </div>
                 <div class>
                     <br><br><br>
-                    <input name="agreement" type="checkbox"> 
+                    <input required name="agreement" type="checkbox"> 
                     <label for="agreement">License Agreement</label>
                 </div>
                 <div class="text-center">
