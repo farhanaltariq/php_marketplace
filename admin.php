@@ -3,7 +3,7 @@
 <head>
   <title>Insert image in MySQL database in PHP</title>
 </head>
-<body>
+<body style="background: darkgrey;">
 
 <?php
 session_start();
@@ -11,6 +11,7 @@ include 'connection.php';
 if(!isset($_SESSION['userweb']))
     header("location: index.php");
 include "connection.php"; // Using database connection file here
+include_once("navbar.php");
 
 if(isset($_POST["submit"]))
 {
@@ -41,14 +42,42 @@ if(isset($_POST["submit"]))
   }
 ?>
 
-<h2>Insert Data</h2>
 
+
+  <div class="container">
+      <table class="table">
+        <tr>
+          <td>ID</td>
+          <td>Type</td>
+          <td>Price</td>
+          <td>Size</td>
+          <td>Stock</td>
+          <td>Image</td>
+        </tr>
+        
+        <?php
+            $sql = "SELECT * FROM product";
+            $result = $connect->query($sql);
+            $counter = 0;
+            if($result->num_rows>0){
+            while ($row = $result->fetch_assoc()){
+              echo "<tr>".
+              "<td>{$row['id']}</td>".
+              "<td>{$row['tipe']}</td>".
+              "<td>{$row['harga']}</td>".
+              "<td>{$row['ukuran']}</td>".
+              "<td>{$row['stok']}</td>".
+                    "<td> <img src='{$row['img']}' width='50px' height='50px'> ".
+                    "</td>";
+              echo "</tr>";                }
+            }
+            mysqli_close($connect);
+        ?>
+      </table>
+    </div>
+
+<h2>Insert Data</h2>
 <form method="post" enctype="multipart/form-data">
-  <table border="2">
-    <tr>
-      <td>Enter Name</td>
-      <td><input type="text" name="fname" placeholder="Enter Name" Required></td>
-    </tr>
     <tr>
       <td>Select Image</td>
       <td><input type="file" name="image" Required></td>

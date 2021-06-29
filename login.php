@@ -73,7 +73,7 @@
             //redirect if inputted valid data
             if($check){
                 $_SESSION['userweb'] = $email;
-                echo "<form method='POST' id='okform' action='insertimage.php' hidden>";
+                echo "<form method='POST' id='okform' action='admin.php' hidden>";
                 echo "<input type='email' name='mail' value='$email'>";
                 echo "<button type='submit' id='click'>OK</button>";
                 echo "<script type=\"text/javascript\">
