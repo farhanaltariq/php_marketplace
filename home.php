@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'functions.php';
-$produk = query("SELECT * FROM product");
+require 'connection.php';
+$produk = mysqli_query($connect, "SELECT * FROM product");
 if (!isset($_SESSION['userweb']))
     header("location: index.php");
 include_once("navbar.php");

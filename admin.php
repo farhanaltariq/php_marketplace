@@ -15,6 +15,11 @@
       header("location: index.php");
   include "connection.php"; // Using database connection file here
   
+  if(isset($_POST['delete'])){
+    $test = mysqli_query($connect, "DELETE FROM product WHERE id=$_POST[id];");
+    unlink($_POST['img']);
+    echo "OK";
+  }
 
   if(isset($_POST["addProduct"])){
       $var1 = rand(1111,9999);  // generate random number in $var1 variable
@@ -67,7 +72,7 @@
         if($result->num_rows>0){
           while ($row = $result->fetch_assoc()){
             //field for update
-            echo "<form ><tr>".
+            echo "<form method='POST'><tr>".
             "<td><input name='id' type='text' value='{$row['id']}'></td>".
             "<td><input name='tipe' type='text' value='{$row['tipe']}'</td>".
             "<td><input name='harga' type='text' value='{$row['harga']}'</td>".
