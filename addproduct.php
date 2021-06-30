@@ -2,10 +2,15 @@
   include_once("navbar.php");
   session_start();
   include 'connection.php';
+  
   if(!isset($_SESSION['userweb']))
       header("location: index.php");
-  include "connection.php"; // Using database connection file here
-  
+// $qry = mysqli_query($connect, "SELECT * FROM admin WHERE email = '$email' AND password = md5('$password')");
+// $check = mysqli_num_rows($qry);
+// //redirect if inputted valid data
+// if(!$check)
+// header('location:home.php');
+
   if(isset($_POST['delete'])){
     $test = mysqli_query($connect, "DELETE FROM product WHERE id=$_POST[id];");
     unlink($_POST['img']);
