@@ -4,7 +4,6 @@
 <html>
 <head>
   <title>aerostreet - admin</title>
-  <link rel="stylesheet" href="./style/adminStyle.css">
 </head>
 <body>
 
@@ -71,5 +70,24 @@
   </form>
   </div>
 </body>
+<style>
+  body{
+      background-color: black;
+      color: white;
+      text-color: white;
+  }
+  input{
+    color: white;
+      width: 80px;
+      border: none;
+      border-bottom: 1px dotted black;
+      background-color: black;
+      margin-top: 40px;
+      margin-bottom: 0px;
+  }
+  th{
+    color: white;
+  }
+</style>
 </html>
 
