@@ -24,7 +24,7 @@ else
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="#">My Account</a>
-                <a href="#">Product</a>
+                <a href="home.php">Product</a>
                 <a href="#">My Bag</a>
                 <a href="#">My Order</a>
             </div>

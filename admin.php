@@ -1,4 +1,7 @@
-<?=include_once("navbar.php");?>
+<?php
+  session_start();
+  include_once("navbar.php");
+?>
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +12,7 @@
 
 <?php
   include 'connection.php';
-  session_start();
+  
   // $qry = mysqli_query($connect, "SELECT * FROM admin WHERE email = '$_POST[email]' AND password = md5('$_POST[password]')");
   // $check = mysqli_num_rows($qry);
   // //redirect if inputted valid data
