@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Insert image in MySQL database in PHP</title>
+  <title>aerostreet - admin</title>
   <link rel="stylesheet" href="./style/adminStyle.css">
 </head>
 <body>
@@ -24,15 +24,14 @@
   }
 
   if(isset($_POST["update"])){
-    echo $_POST['id'];
-    mysqli_query($connect, "UPDATE product SET tipe = '$_POST[tipe]', harga = $_POST[harga], ukuran = $_POST[ukuran], stok = $_POST[stok];");
+    mysqli_query($connect, "UPDATE product SET tipe = '$_POST[tipe]', harga = $_POST[harga], ukuran = $_POST[ukuran], stok = $_POST[stok] WHERE id = $_POST[id];");
   }
 ?>
 
 <div class="container">
   <center><h2><b>ADMIN MODE</b></h2></center>
   <hr>
-  <a href="addPrdoduct.php"><button class="btn btn-primary">Add Product</button></a>
+  <a href="addProduct.php"><button class="btn btn-primary">Add Product</button></a>
   <form method="post" enctype="multipart/form-data">
     <table class="table text-center">
       <tr>
@@ -52,8 +51,8 @@
           while ($row = $result->fetch_assoc()){
             //field for update
             echo "<form method='POST'><tr>".
-                  "<td><input name='id' type='text' value='{$row['id']}' disabled></td>".
-                  "<td><input name='tipe' type='text' value='{$row['tipe']}'</td>".
+                  "<td><input name='id' type='text' value='{$row['id']}'></td>".
+                  "<td><input name='tipe' type='text' value='{$row['tipe']}'></td>".
                   "<td><input name='harga' type='text' value='{$row['harga']}'</td>".
                   "<td><input name='ukuran' type='text' value='{$row['ukuran']}'</td>".
                   "<td><input name='stok' type='text' value='{$row['stok']}'</td>".
@@ -67,7 +66,6 @@
             "</tr></form>";
           }
         }
-        mysqli_close($connect);
       ?>
     </table>
   </form>
