@@ -18,7 +18,7 @@ else
 
 <body>
     <!--Navigation Bar  & Side Bar-->
-    <div class="container-fluid">
+    <div class="container-fluid c">
         <!-- Side Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div id="mySidenav" class="sidenav">
