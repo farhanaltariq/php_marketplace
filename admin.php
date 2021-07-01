@@ -53,7 +53,7 @@
           while ($row = $result->fetch_assoc()){
             //field for update
             echo "<form method='POST'><tr>".
-                  "<td><input name='id' type='text' value='{$row['id']}'></td>".
+                  "<td><input type='text' value='{$row['id']}' disabled><input name='id' type='text' value='{$row['id']}' hidden></td>".
                   "<td><input name='tipe' type='text' value='{$row['tipe']}'></td>".
                   "<td><input name='harga' type='text' value='{$row['harga']}'</td>".
                   "<td><input name='ukuran' type='text' value='{$row['ukuran']}'</td>".
@@ -83,7 +83,7 @@
     color: white;
       width: 80px;
       border: none;
-      border-bottom: 1px dotted black;
+      border-bottom: 1px dotted white;
       background-color: black;
       margin-top: 40px;
       margin-bottom: 0px;
