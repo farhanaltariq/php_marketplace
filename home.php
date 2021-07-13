@@ -5,11 +5,14 @@ require 'connection.php';
 $produk = mysqli_query($connect, "SELECT * FROM product");
 if (!isset($_SESSION['userweb']))
     header("location: index.php");
-else
+
     $email = $_POST['mail'];
-include_once("navbar.php");
-if(isset($_POST['addtocart']))
-    echo "YOLO";
+
+    include_once("navbar.php");
+if(isset($_POST['addtocart'])){
+    $id_prod = $_POST['product_id'];
+    mysqli_query($connect, "INSERT INTO orders (email, product_id) VALUES ('$email', $_POST[product_id]);");
+}
 ?>
 <html>
 
@@ -41,7 +44,8 @@ if(isset($_POST['addtocart']))
                         <p><?= $row["ukuran"]; ?></p>
                         <p><?= $row["stok"]; ?></p>
                         <div style="text-align: right; font-size: 24px;">
-                        <input type="mail" name="mail" value="$email" hidden>
+                        <input type="mail" name="mail" value="<?=$email?>" hidden>
+                        <input type="number" name="product_id" value ="<?= $row['id']?>" hidden>
                         <button type='submit' name='addtocart'><b>&plus;</a></b></button>
                         </div>
                     </div>
