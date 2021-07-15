@@ -13,10 +13,14 @@
 </style>
 <?php foreach ($order as $row) : ?>
     
-    <div class="text-center">
-        <img width="150" height="200" src="<?= $row['img']?>" alt="">
-        <?= $row['email']?> : 
-        <?= $row['tipe']?> : 
-        <?= $row['harga']?>
+    <div class="container">
+        <table class="table table-dark text-center">
+            <tr>
+                <td><img width="150" height="200" src="<?= $row['img']?>" alt=""></td>
+                <td><?= $row['email']?></td>
+                <td><?= $row['tipe']?></td>
+                <td><?= $row['harga']?></td>
+            </tr>
+        </table>
     </div>
 <?php endforeach; ?>

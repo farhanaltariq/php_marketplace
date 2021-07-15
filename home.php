@@ -13,9 +13,13 @@ if(isset($_POST['mail'])){
     
     include_once("navbar.php");
 if(isset($_POST['addtocart'])){
-    $email = $_POST['mail'];
+    $msg = "Successfully Added to Cart";
+    
+    
     $id_prod = $_POST['product_id'];
-    mysqli_query($connect, "INSERT INTO orders (email, product_id) VALUES ('$email', $_POST[product_id]);");
+    $query = "INSERT INTO orders (email, product_id) VALUES ('$email', $_POST[product_id]);";
+    echo $query;
+    mysqli_query($connect, $query);
 }
 ?>
 <html>
@@ -32,6 +36,9 @@ if(isset($_POST['addtocart'])){
             margin-top: 60px;
             color: black;
         }
+        table tr{
+            border-bottom: hidden;
+        }
     </style>
 </head>
 
@@ -43,14 +50,16 @@ if(isset($_POST['addtocart'])){
                 <form action="" method="POST">
                     <img width="150" height="200" src="<?= $row['img'] ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h4><b><?= $row["tipe"]; ?></b></h4>
-                        <p><?= $row["harga"]; ?></p>
-                        <p><?= $row["ukuran"]; ?></p>
-                        <p><?= $row["stok"]; ?></p>
+                        <h4 class="text-center"><b><?= $row["tipe"]; ?></b></h4>
+                        <table class="table table-light text-start">
+                        <tr><p><td>IDR</td> <td><?= $row["harga"]; ?></td></p></tr>
+                        <tr><p><td>Size</td> <td><?= $row["ukuran"]; ?></td></p></tr>
+                        <!-- <tr><p><td>Stock</td> <td><?= $row["stok"]; ?></td></p></tr> -->
+                        </table>
                         <div style="text-align: right; font-size: 24px;">
-                        <input type="mail" name="mail" value="<?=$email?>" hidden>
+                        <input type="mail" name="mail" value="<?=$_COOKIE['username']?>" hidden>
                         <input type="number" name="product_id" value ="<?= $row['id']?>" hidden>
-                        <button type='submit' name='addtocart'><b>&plus;</a></b></button>
+                        <button type='submit' name='addtocart' class="btn btn-sm btn-warning">Add to cart <b>&plus;</a></b></button>
                         </div>
                     </div>
                     </form>
