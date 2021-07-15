@@ -57,7 +57,7 @@ if(isset($_POST['addtocart'])){
                         <!-- <tr><p><td>Stock</td> <td><?= $row["stok"]; ?></td></p></tr> -->
                         </table>
                         <div style="text-align: right; font-size: 24px;">
-                        <input type="mail" name="mail" value="<?=$_COOKIE['username']?>" hidden>
+                        <input type="mail" name="mail" value="<?=isset($_COOKIE['username']) ? $_COOKIE['username'] : '';?>" hidden>
                         <input type="number" name="product_id" value ="<?= $row['id']?>" hidden>
                         <button type='submit' name='addtocart' class="btn btn-sm btn-warning">Add to cart <b>&plus;</a></b></button>
                         </div>

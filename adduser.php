@@ -11,11 +11,11 @@
     $phone      = $_POST['phone'];
 
     echo "$email<br>$password<br>$name<br>$birthdate<br>$gender<br>$profession<br>$address<br>$instagram<br>$phone";
-    $qry = "INSERT INTO user (email, password, name, birthdate, gender, profession, address, instagram, phone)".
+    $qry = "INSERT INTO user (email, password, uname, birthdate, gender, profession, address, instagram, phone)".
             "VALUES ('$email', md5('$password'), '$name', '$birthdate', '$gender', '$profession', '$address', '$instagram', '$phone');";
     $sql = mysqli_query($connect, $qry);
     if($sql)
         header("location:home.php");
     else
-        echo "<br>RAKENEK";
+        echo "$qry"."<br>RAKENEK";
 ?>
