@@ -3,7 +3,7 @@
     //$email = $_POST['mail'];
     include_once("connection.php");
     include_once("navbar.php");
-    $order = mysqli_query($connect, "SELECT * FROM orders, product WHERE orders.email='$_COOKIE[username]' GROUP BY tipe;");
+    $order = mysqli_query($connect, "SELECT * FROM orders, product WHERE orders.email='$_COOKIE[username]' AND product_id=product.id GROUP BY tipe;");
 ?>
 <style>
     body{

@@ -18,22 +18,4 @@
         header("location:home.php");
     else
         echo "<br>RAKENEK";
-            // if (isset($_POST['submit'])) {
-    //     $NamaBarang = $_POST['NamaBarang'];
-    //     $HargaBeli = $_POST['HargaBeli'];
-    //     $HargaJual = $_POST['HargaJual'];
-    //     $Stok = $_POST['Stok'];
-    
-    //     $query = "INSERT INTO barang (NamaBarang, HargaBeli, HargaJual, stok) VALUES ".
-    //              "('$NamaBarang', '$HargaBeli', '$HargaJual', '$Stok')";
-    //     $sql = mysqli_query($connect, $query);
-    //     if ($sql) {
-    //       header("location:read.php");
-    //     } else {
-    //       echo $query;
-    //       echo "Gagal menambahkan data";
-    //     }
-    //   } else {
-    
-    //   }
 ?>
