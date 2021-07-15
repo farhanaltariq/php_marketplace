@@ -46,6 +46,7 @@
   <center><h2><b>ADMIN MODE</b></h2></center>
   <hr>
   <a href="addProduct.php"><button class="btn btn-primary">Add Product</button></a>
+  <a href="cekorder.php">See Orders</a>
   <form method="post" enctype="multipart/form-data">
     <table class="table text-center">
       <tr>
