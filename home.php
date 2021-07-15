@@ -6,10 +6,14 @@ $produk = mysqli_query($connect, "SELECT * FROM product");
 if (!isset($_SESSION['userweb']))
     header("location: index.php");
 
+if(isset($_POST['mail'])){
     $email = $_POST['mail'];
-
+    setcookie('username', $_POST['mail'], time() + (60 * 60 * 24 * 5), '/');
+}
+    
     include_once("navbar.php");
 if(isset($_POST['addtocart'])){
+    $email = $_POST['mail'];
     $id_prod = $_POST['product_id'];
     mysqli_query($connect, "INSERT INTO orders (email, product_id) VALUES ('$email', $_POST[product_id]);");
 }

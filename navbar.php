@@ -25,8 +25,7 @@ else
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="#">My Account</a>
                 <a href="home.php">Product</a>
-                <a href="#">My Bag</a>
-                <a href="#">My Order</a>
+                <a href="mybag.php">My Order</a>
             </div>
             <span class="stripes" style="font-size:30px; margin-left:20px; margin-right: 20px; color: white;" onclick="openNav()">&#9776;</span>
             <a href="index.php"><img src="./style/img/logo2.png" class="logo" alt="AeroStreet"></a>
@@ -43,7 +42,7 @@ else
                     <a style="margin-left: 50px;" class="nav-link" href="<?= strtolower($text) ?>.php"><?= $text ?></a>
                     <a style="margin-left: 50px;" class="nav-link" href="https://api.whatsapp.com/send?phone=6281230447023&text=Hai%20Farhan,%20kamu%20sangat%20tampan.">CONTACT</a>
                 </div>
-                <img src="./style/img/bag.png" style="width: 25px; height: 25px; margin-top: 5px; margin-left: 50px; margin-right: 50px;">
+                <a href="mybag.php"><img src="./style/img/bag.png" style="width: 25px; height: 25px; margin-top: 5px; margin-left: 50px; margin-right: 50px;"></a>
             </div>
         </nav>
     </div>
