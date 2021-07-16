@@ -1,25 +1,22 @@
 <?php
-session_start();
-require 'connection.php';
+    session_start();
+    require 'connection.php';
+    if($_SESSION['status']=="admin")
+        header("location:admin.php");
+    $produk = mysqli_query($connect, "SELECT * FROM product");
+    if (!isset($_SESSION['userweb']))
+        header("location: index.php");
 
-$produk = mysqli_query($connect, "SELECT * FROM product");
-if (!isset($_SESSION['userweb']))
-    header("location: index.php");
-
-if(isset($_POST['mail'])){
-    $email = $_POST['mail'];
-    setcookie('username', $_POST['mail'], time() + (60 * 60 * 24 * 5), '/');
-}
-    $email = isset($_POST['mail']) ? $_POST['mail'] : $_COOKIE['username'];
+    $email = $_SESSION['userweb'];
     include_once("navbar.php");
-if(isset($_POST['addtocart'])){
-    $msg = "Successfully Added to Cart";
-    $id_prod = $_POST['product_id'];
-    $query = "INSERT INTO orders (email, product_id) VALUES ('$email', $_POST[product_id]);";
-    echo "<div class='text-center'>$msg</div>";
-    mysqli_query($connect, $query);
-    unset($_POST['addtocart']);
-}
+    if(isset($_POST['addtocart'])){
+        $msg = "Successfully Added to Cart";
+        $id_prod = $_POST['product_id'];
+        $query = "INSERT INTO orders (email, product_id) VALUES ('$email', $_POST[product_id]);";
+        echo "<div class='text-center'>$msg</div>";
+        mysqli_query($connect, $query);
+        unset($_POST['addtocart']);
+    }
 ?>
 <html>
 

@@ -23,7 +23,7 @@ else
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">My Account</a>
+                <a href="myaccount.php">My Account</a>
                 <a href="home.php">Product</a>
                 <a href="mybag.php">My Order</a>
             </div>

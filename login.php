@@ -59,17 +59,14 @@
         $checkstatus = mysqli_fetch_assoc($qry);
         //redirect if inputted valid data
         if($check){
-            if($checkstatus['status']=="admin"){
-                $_SESSION['status'] = "admin";
-                header("location:admin.php");
-            }
+            $_SESSION['status'] = "user";
             $_SESSION['userweb'] = $email;
             echo "<form method='POST' id='okform' action='home.php' hidden>";
             echo "<input type='email' name='mail' value='$email'>";
             echo "<button type='submit' id='click'>OK</button>";
-            // echo "<script type=\"text/javascript\">
-            //         document.getElementById('okform').submit();
-            //         </script>";
+            echo "<script type=\"text/javascript\">
+                    document.getElementById('okform').submit();
+                    </script>";
             echo "</form>";
             exit;
         }else {
@@ -77,6 +74,7 @@
             $check = mysqli_num_rows($qry);
             //redirect if inputted valid data
             if($check){
+                $_SESSION['status'] = "admin";
                 $_SESSION['userweb'] = $email;
                 echo "<form method='POST' id='okform' action='admin.php' hidden>";
                 echo "<input type='email' name='mail' value='$email'>";

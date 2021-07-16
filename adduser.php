@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
     include_once("connection.php");
     $email      = $_POST['email'];
     $password   = $_POST['password'];
@@ -18,4 +18,4 @@
         header("location:home.php");
     else
         echo "$qry"."<br>RAKENEK";
-?>
+?> -->
