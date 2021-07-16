@@ -8,17 +8,17 @@ if (!$connect)
   echo "Connection Failed";
 
 function mv() : void{
-  if($_SESSION['status']!="user"){
-    echo "<script>".
-            "alert('Admin Can\'t Use This Page');" .
-            "window.location.replace('admin.php');" .
-          "</script>";
-  }
   if(!isset($_SESSION['userweb'])){
         echo "<script>".
                 "alert('You Must Log In First');" .
                 "window.location.replace('index.php');" .
               "</script>";
+  }
+  if($_SESSION['status']!="user"){
+    echo "<script>".
+            "alert('Admin Can\'t Use This Page');" .
+            "window.location.replace('admin.php');" .
+          "</script>";
   }
   
 }
