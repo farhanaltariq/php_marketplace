@@ -6,4 +6,13 @@ $DB_DBName = "aerostreet";
 $connect = mysqli_connect($DB_Location,$DB_Username,$DB_Password,$DB_DBName);
 if (!$connect)
   echo "Connection Failed";
+
+function mv($str) : void{
+  echo $str;
+  if(!isset($_SESSION['userweb']))
+        echo "<script>".
+                "alert('You Must Log In First');" .
+                "window.location.replace('index.php');" .
+              "</script>";
+}
 ?>

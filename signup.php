@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "connection.php";
+    include_once("connection.php");
     include_once("navbar.php");
 ?>
 <!DOCTYPE html>

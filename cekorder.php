@@ -23,18 +23,20 @@
             <th>
                 <!-- <td></td> -->
                 <td>Email</td>
-                <td>Nama</td>
+                <td>Product Name</td>
                 <td>Tipe</td>
-                <td>Harga</td>
+                <td>Buyer</td>
+                <td>Address</td>
                 <td colspan=3>Aksi</td>
             </th>
         <?php foreach ($order as $row) : ?>
             <tr>
                 <td><img width="150" height="200" src="<?= $row['img']?>" alt=""></td>
                 <td><?= $row['email']?></td>
-                <td><?= $row['uname']?> </td> 
                 <td><?= $row['tipe']?> </td> 
+                <td><?= $row['uname']?> </td> 
                 <td><?= $row['harga']?></td>
+                <td><?= $row['address']?></td>
                 <td><a href="<?=$row['img']?>">Lihat Bukti Bayar</a></td>
                 <td><button class="btn btn-md btn-primary">Tandai Selesai</button></td>
                 <td><button class="btn btn-md btn-danger">Hapus Pesanan</button></td>

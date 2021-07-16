@@ -1,7 +1,13 @@
 <?php
     session_start();
-    include "connection.php";
+    include_once("connection.php");
     include_once("navbar.php");
+    // if(!isset($_SESSION['userweb']))
+    //     echo "<script>".
+    //             "alert('You Must Log In First');" .
+    //             "window.location.replace('index.php');" .
+    //           "</script>";
+    $mv("Hello");
     $qry = "SELECT * FROM user WHERE email='$_SESSION[userweb]'";
     $sql = mysqli_query($connect, $qry);
     $row = mysqli_fetch_assoc($sql);
@@ -31,7 +37,8 @@
             <div class="text-center" style="margin-top: 10px; font-size: 22px;"><b>My Account</b></div>
             <form method="post">
                 <div class="left-form mb-3">
-                    <input disabled required name="email" placeholder="Email" type="email" class="form-control field" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?=$row['email']?>">
+                    <input disabled required placeholder="Email" type="email" class="form-control field" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?=$row['email']?>">
+                    <input type="email" name="email" value="<?=$row['email']?>" hidden>
                     <input required name="password" placeholder="Password" type="password" class="form-control field" id="exampleInputPassword1" onkeyup='check();'>
                     <br>
                     <input required name="name" placeholder="Name" type="text" class="form-control field" id="exampleInputEmail1" value="<?=$row['uname']?>">
@@ -69,7 +76,7 @@
     <?php
         if(isset($_POST['update'])){
             $qry = "UPDATE user SET uname = '$_POST[name]', password=md5('$_POST[password]'), gender='$_POST[gender]', 
-                    birthdate='$_POST[birthdate]', profession='$_POST[profession]', address='$_POST[address]', instagram='$_POST[instagram]', phone='$_POST[phone]';";
+                    birthdate='$_POST[birthdate]', profession='$_POST[profession]', address='$_POST[address]', instagram='$_POST[instagram]', phone='$_POST[phone]' WHERE email='$_POST[email]';";
             $update = mysqli_query($connect, $qry);
             echo $qry;
             if($update)
