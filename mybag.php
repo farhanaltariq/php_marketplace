@@ -2,6 +2,7 @@
     session_start();
     //$email = $_POST['mail'];
     include_once("connection.php");
+    mv();
     include_once("navbar.php");
     $order = mysqli_query($connect, "SELECT * FROM orders, product WHERE orders.email='$_SESSION[userweb]' AND product_id=product.id GROUP BY tipe;");
 ?>

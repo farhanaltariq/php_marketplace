@@ -7,8 +7,7 @@ $connect = mysqli_connect($DB_Location,$DB_Username,$DB_Password,$DB_DBName);
 if (!$connect)
   echo "Connection Failed";
 
-function mv($str) : void{
-  echo $str;
+function mv() : void{
   if(!isset($_SESSION['userweb']))
         echo "<script>".
                 "alert('You Must Log In First');" .

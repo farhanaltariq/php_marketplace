@@ -2,12 +2,7 @@
     session_start();
     include_once("connection.php");
     include_once("navbar.php");
-    // if(!isset($_SESSION['userweb']))
-    //     echo "<script>".
-    //             "alert('You Must Log In First');" .
-    //             "window.location.replace('index.php');" .
-    //           "</script>";
-    $mv("Hello");
+    mv();
     $qry = "SELECT * FROM user WHERE email='$_SESSION[userweb]'";
     $sql = mysqli_query($connect, $qry);
     $row = mysqli_fetch_assoc($sql);
