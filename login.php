@@ -56,15 +56,20 @@
         $password = $_POST['password'];
         $qry = mysqli_query($connect, "SELECT * FROM user WHERE email = '$email' AND password = md5('$password')");
         $check = mysqli_num_rows($qry);
+        $checkstatus = mysqli_fetch_assoc($qry);
         //redirect if inputted valid data
         if($check){
+            if($checkstatus['status']=="admin"){
+                $_SESSION['status'] = "admin";
+                header("location:admin.php");
+            }
             $_SESSION['userweb'] = $email;
             echo "<form method='POST' id='okform' action='home.php' hidden>";
             echo "<input type='email' name='mail' value='$email'>";
             echo "<button type='submit' id='click'>OK</button>";
-            echo "<script type=\"text/javascript\">
-                    document.getElementById('okform').submit();
-                    </script>";
+            // echo "<script type=\"text/javascript\">
+            //         document.getElementById('okform').submit();
+            //         </script>";
             echo "</form>";
             exit;
         }else {

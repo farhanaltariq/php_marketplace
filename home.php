@@ -10,16 +10,15 @@ if(isset($_POST['mail'])){
     $email = $_POST['mail'];
     setcookie('username', $_POST['mail'], time() + (60 * 60 * 24 * 5), '/');
 }
-    
+    $email = isset($_POST['mail']) ? $_POST['mail'] : $_COOKIE['username'];
     include_once("navbar.php");
 if(isset($_POST['addtocart'])){
     $msg = "Successfully Added to Cart";
-    
-    
     $id_prod = $_POST['product_id'];
     $query = "INSERT INTO orders (email, product_id) VALUES ('$email', $_POST[product_id]);";
-    echo $query;
+    echo "<div class='text-center'>$msg</div>";
     mysqli_query($connect, $query);
+    unset($_POST['addtocart']);
 }
 ?>
 <html>
@@ -57,7 +56,7 @@ if(isset($_POST['addtocart'])){
                         <!-- <tr><p><td>Stock</td> <td><?= $row["stok"]; ?></td></p></tr> -->
                         </table>
                         <div style="text-align: right; font-size: 24px;">
-                        <input type="mail" name="mail" value="<?=isset($_COOKIE['username']) ? $_COOKIE['username'] : '';?>" hidden>
+                        <input type="mail" name="mail" value="<?=$email;?>" hidden>
                         <input type="number" name="product_id" value ="<?= $row['id']?>" hidden>
                         <button type='submit' name='addtocart' class="btn btn-sm btn-warning">Add to cart <b>&plus;</a></b></button>
                         </div>

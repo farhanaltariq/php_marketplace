@@ -1,6 +1,8 @@
 <?php
   session_start();
   include_once("navbar.php");
+  if($_SESSION['status']!="admin")
+    header("location:home.php");
 ?>
 
 <!DOCTYPE html>
