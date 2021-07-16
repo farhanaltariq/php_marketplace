@@ -7,6 +7,7 @@ $connect = mysqli_connect($DB_Location,$DB_Username,$DB_Password,$DB_DBName);
 if (!$connect)
   echo "Connection Failed";
 
+//restrict user to show admin page
 function mv() : void{
   if(!isset($_SESSION['userweb'])){
         echo "<script>".

@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once("connection.php");
+    //if already logged in, then redirect to product page
     if(isset($_SESSION['userweb']))
         header("location:home.php");
     include_once("navbar.php");

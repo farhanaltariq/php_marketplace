@@ -1,6 +1,7 @@
 <?php
 //session_start();
 include_once("connection.php");
+//change text if logged in or out
 if (isset($_SESSION['userweb']))
     $text = "LOGOUT";
 else

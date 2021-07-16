@@ -20,13 +20,16 @@
 <?php
   include_once("connection.php");
   
+  //redirect if not logged in
   if(!isset($_SESSION['userweb']))
       header("location: index.php");
   
+  //delete from database
   if(isset($_POST['delete'])){
     mysqli_query($connect, "DELETE FROM product WHERE id=$_POST[id];");
   }
 
+  //update database
   if(isset($_POST["update"])){
     $var1 = rand(1111,9999);  // generate random number in $var1 variable
     $var2 = rand(1111,9999);  // generate random number in $var2 variable

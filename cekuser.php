@@ -1,5 +1,6 @@
 <?php
     require 'connection.php';
+    //get user data from database
     $produk = mysqli_query($connect, "SELECT * FROM user");
 ?>
 <div class="card" style="align-text: center">

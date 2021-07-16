@@ -1,14 +1,21 @@
 <?php
     session_start();
     require 'connection.php';
+    // if looged in as admin, redirect to admin page
     if($_SESSION['status']=="admin")
         header("location:admin.php");
+    
+    // get data
     $produk = mysqli_query($connect, "SELECT * FROM product");
+    // if not logged in, redirect to index page
     if (!isset($_SESSION['userweb']))
         header("location: index.php");
 
+    // save email data that can be used later
     $email = $_SESSION['userweb'];
+    //call navigation bar
     include_once("navbar.php");
+    //insert data to database
     if(isset($_POST['addtocart'])){
         $msg = "Successfully Added to Cart";
         $id_prod = $_POST['product_id'];

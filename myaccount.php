@@ -69,6 +69,7 @@
         </div>
     </div>
     <?php
+        //updating database
         if(isset($_POST['update'])){
             $qry = "UPDATE user SET uname = '$_POST[name]', password=md5('$_POST[password]'), gender='$_POST[gender]', 
                     birthdate='$_POST[birthdate]', profession='$_POST[profession]', address='$_POST[address]', instagram='$_POST[instagram]', phone='$_POST[phone]' WHERE email='$_POST[email]';";
