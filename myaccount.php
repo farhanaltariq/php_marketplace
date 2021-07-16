@@ -10,6 +10,7 @@
 <html>
 <head><title>AeroStreet</title>
 <script>
+    // Function to check re-password | doesn't work
     var check = function() {
     if (document.getElementById('password').value == document.getElementById('re-password').value) {
         document.getElementById('message').style.color = 'green';
@@ -27,13 +28,13 @@
 <body style="color: black;">   
     <div class="loginradius container position-absolute top-50 start-50 translate-middle">
         <div class="container-fuid signupform" style="box-sizing: border-box;">
-            <div class="text-start" style="margin-top: 30px; margin-left: 20px;"><b>My Account</b></div>
-            <form method="post" action="adduser.php">
+            <div class="text-center" style="margin-top: 10px; font-size: 22px;"><b>My Account</b></div>
+            <form method="post">
                 <div class="left-form mb-3">
-                    <input required name="email" placeholder="Email" type="email" class="form-control field" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?=$row['email']?>">
+                    <input disabled required name="email" placeholder="Email" type="email" class="form-control field" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?=$row['email']?>">
                     <input required name="password" placeholder="Password" type="password" class="form-control field" id="exampleInputPassword1" onkeyup='check();'>
                     <br>
-                    <input required name="name" placeholder="Name" type="text" class="form-control field" id="exampleInputEmail1" value="<?=$row['email']?>">
+                    <input required name="name" placeholder="Name" type="text" class="form-control field" id="exampleInputEmail1" value="<?=$row['uname']?>">
                     <input required name="birthdate" placeholder="Birthday" type="date" class="form-control field" id="exampleInputEmail1" value="<?=$row['birthdate']?>">
                 </div>
                 <div class="right-form mb-3">
@@ -60,10 +61,20 @@
                 </div>
                 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary prs" href="home.php">Update</button>
+                    <button type="submit" class="btn btn-primary prs" name="update" style="margin-top: 20px;">Update</button>
                 </div>
             </form>
         </div>
     </div>
+    <?php
+        if(isset($_POST['update'])){
+            $qry = "UPDATE user SET uname = '$_POST[name]', password=md5('$_POST[password]'), gender='$_POST[gender]', 
+                    birthdate='$_POST[birthdate]', profession='$_POST[profession]', address='$_POST[address]', instagram='$_POST[instagram]', phone='$_POST[phone]';";
+            $update = mysqli_query($connect, $qry);
+            echo $qry;
+            if($update)
+                echo "<div style='color: white;' class='text-center'>Data Updated</div>";
+        }
+    ?>
 </body>
 </html>
