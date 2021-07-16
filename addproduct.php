@@ -1,7 +1,7 @@
 <?php
   include_once("navbar.php");
   session_start();
-  include 'connection.php';
+  include_once("connection.php"); // Using database connection file here
   
   if(!isset($_SESSION['userweb']))
       header("location: index.php");
@@ -15,8 +15,6 @@
       <body style='background: black; color: white'>
       
       <?php
-      
-      include "connection.php"; // Using database connection file here
       
       if(isset($_POST["submit"]))
       {
@@ -43,6 +41,7 @@
       <div class='container position-absolute text-center start-50 top-50 translate-middle'>
       <h2>Insert Data</h2>
       <div class="mb-3 row">
+        <!-- Insert Data Here -->
       <form method="post" enctype="multipart/form-data">
             <input type="text" name="Type" placeholder="Type" required><br><br>
             <input type="number" name="Price" placeholder="Price" required><br><br>

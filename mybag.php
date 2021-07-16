@@ -47,7 +47,7 @@
         <div class="position-start" style="width: 890px; background: white; border-radius: 10px; height: 170px; box-sizing: border-box; padding-left: 90px; margin-top: 33px;">
             <img width="150" height="150" src="<?= $row['img']?>" alt="img" style="float: left; margin-right: 40px; margin-top: 11px;">
             <br><h4><?= $row['tipe']?></h4>
-            Color: Same as in the picture<br>3
+            Color: Same as in the picture<br>
             Size : <?= $row['ukuran'];?> <br>
             <b style="font-size: 24px;">IDR <?= $row['harga'];?></b>
         </div>
