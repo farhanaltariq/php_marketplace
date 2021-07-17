@@ -4,7 +4,6 @@
     mv();
     // Get Data
     $order = mysqli_query($connect, "SELECT * FROM orders, product WHERE orders.email='$_SESSION[userweb]' AND product_id=product.id GROUP BY tipe;");
-    $row = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM user WHERE email = '$_SESSION[userweb]';"));
 ?>
 <div style="height: 70px; background: black;"><?=include_once("navbar.php");?></div>
 <style>
@@ -17,6 +16,15 @@
     }
 </style>
 
+<?php 
+    $total = 0;
+    //count total price
+    foreach ($order as $row) : 
+    $total += $row['harga'];    
+    endforeach;
+    //convert data as array
+    $row = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM user WHERE email = '$_SESSION[userweb]';"));
+?>
 
 <div class="container" style="margin-top: 40px; box-sizing: border-box;">
     <div class="sticky-top text-center" style="float: right; width: 370px; height: 400px; background: white; border-radius: 10px;">
@@ -31,7 +39,7 @@
             </tr>
             <tr>
                 <td style="border: none;"><b>Subtotal</b></td>
-                <td style="border: none;">IDR xxx.xxx</td>
+                <td style="border: none;">IDR <?=$total?></td>
                 <tr>
                     <td><b>Discount</b></td>
                     <td><b>-</b></td>
@@ -39,7 +47,7 @@
             </tr>
             <tr>
                 <td><b>Total</b></td>
-                <td>IDR xxxxx</td>
+                <td>IDR <?=$total?></td>
             </tr>
         </table>
         <button class="btn btn-lg btn-success" style="width: 200px;"><b>B u y</b></button>

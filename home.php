@@ -18,9 +18,8 @@
     //insert data to database
     if(isset($_POST['addtocart'])){
         $msg = "Successfully Added to Cart";
-        $id_prod = $_POST['product_id'];
         $query = "INSERT INTO orders (email, product_id) VALUES ('$email', $_POST[product_id]);";
-        echo "<div class='text-center'>$msg</div>";
+        echo "<script>alert('$msg')</script>";
         mysqli_query($connect, $query);
         unset($_POST['addtocart']);
     }
