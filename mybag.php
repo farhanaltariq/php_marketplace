@@ -56,7 +56,10 @@
                 <td>IDR <?=$total?></td>
             </tr>
         </table>
-        <button class="btn btn-lg btn-success" style="width: 200px;"><b>B u y</b></button>
+        <form action="pay.php" method="POST">
+            <input hidden type="text" name="price" value='<?=$total?>'>
+            <button class="btn btn-lg btn-success" style="width: 200px;"><b>B u y</b></button>
+        </form>
     </div>
     </div>
     <?php
