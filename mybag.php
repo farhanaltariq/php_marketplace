@@ -4,6 +4,12 @@
     mv();
     // Get Data
     $order = mysqli_query($connect, "SELECT * FROM orders, product WHERE orders.email='$_SESSION[userweb]' AND product_id=product.id GROUP BY tipe;");
+    if(isset($_POST['delete'])){
+        $qry = "DELETE FROM orders WHERE id_order=$_POST[idOrder];";
+        mysqli_query($connect, $qry);
+        unset($_POST['delete']);
+        header("location:mybag.php");    
+    }
 ?>
 <div style="height: 70px; background: black;"><?=include_once("navbar.php");?></div>
 <style>
@@ -53,14 +59,25 @@
         <button class="btn btn-lg btn-success" style="width: 200px;"><b>B u y</b></button>
     </div>
     </div>
+    <?php
+        if(mysqli_num_rows($order)==0){
+            echo "<div class='text-center'><h3>Your Bag is Currently Empty</h3></div>";
+        }
+    ?>
     <!-- Show The Orders Data -->
     <?php foreach ($order as $row) : ?>
-        <div class="position-start" style="width: 890px; background: white; border-radius: 10px; height: 170px; box-sizing: border-box; padding-left: 90px; margin-top: 33px;">
+        <div class="position-start" style="width: 890px; background: white; border-radius: 10px; height: 190px; box-sizing: border-box; padding-left: 90px; margin-top: 33px;">
             <img width="150" height="150" src="<?= $row['img']?>" alt="img" style="float: left; margin-right: 40px; margin-top: 11px;">
             <br><h4><?= $row['tipe']?></h4>
             Color: Same as in the picture<br>
             Size : <?= $row['ukuran'];?> <br>
             <b style="font-size: 24px;">IDR <?= $row['harga'];?></b>
+            <div class="text-end" style="margin-right: 40px;">
+                <form action="" method="POST">
+                    <input type="number" name="idOrder" value="<?=$row['id_order']?>" hidden>
+                    <button name="delete" class="button">&#128465;</button>
+                </form>
+            </div>
         </div>
     <?php endforeach; ?>
     
