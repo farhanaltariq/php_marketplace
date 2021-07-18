@@ -1,6 +1,6 @@
 <?php
-  include_once("navbar.php");
   session_start();
+  include_once("navbar.php");
   include_once("connection.php"); // Using database connection file here
   
   if(!isset($_SESSION['userweb']))
@@ -9,7 +9,7 @@
       <!DOCTYPE html>
       <html>
       <head>
-        <title>Insert image in MySQL database in PHP</title>
+        <title>AeroStreet</title>
         <link rel="stylesheet" href="./style/loginStyle.css">
       </head>
       <body style='background: black; color: white'>
