@@ -5,7 +5,9 @@
   
   if(!isset($_SESSION['userweb']))
       header("location: index.php");
-      ?>
+  if($_SESSION['status']=="user")
+    header("location:index.php");
+?>
       <!DOCTYPE html>
       <html>
       <head>
