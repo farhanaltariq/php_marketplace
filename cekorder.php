@@ -3,6 +3,11 @@
     include_once("connection.php");
     //get data
     $order = mysqli_query($connect, "SELECT * FROM orders, product, user WHERE product.id=orders.product_id AND user.email=orders.email;");
+    if(isset($_POST['complete'])){
+        mysqli_query($connect, "DELETE FROM orders WHERE id_order=$_POST[idOrder];");
+        header("location:cekorder.php");
+    }
+        
 ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -44,9 +49,11 @@
                 <td><?= $row['uname']?> </td> 
                 <td><?= $row['harga']?></td>
                 <td><?= $row['address']?></td>
-                <td><a href="<?=$row['img']?>">Lihat Bukti Bayar</a></td>
-                <td><button class="btn btn-md btn-primary">Tandai Selesai</button></td>
-                <td><button class="btn btn-md btn-danger">Hapus Pesanan</button></td>
+                <td><a href="<?=$row['img']?>">See Payment of Proof</a></td>
+                <form action="" method="POST">
+                    <input type="number" hidden name="idOrder" value="<?= $row['id_order']; ?>">
+                    <td><button name="complete" class="btn btn-md btn-primary">Mark as Done</button></td>
+                </form>
             </tr>
             <?php endforeach; ?>
         </table>
