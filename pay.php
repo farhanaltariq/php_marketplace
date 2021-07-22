@@ -33,7 +33,7 @@
       
           move_uploaded_file($_FILES["image"]["tmp_name"],$dst);  // move image into the {all_images} folder with 32 characters hex number and image name
         
-          $check = mysqli_query($connect,"insert into product(tipe, harga, ukuran, stok,img) values('$_POST[Type]', '$_POST[Price]', '$_POST[Size]', '$_POST[Stock]','$dst_db')");  // executing insert query
+          $check = mysqli_query($connect,"insert into payment(email, payment_img) values('$_SESSION[userweb]','$dst_db')");  // executing insert query
           
           if($check){
             echo "<script>alert('Thank You, Your Order Will be Processed Soon');</script>";
