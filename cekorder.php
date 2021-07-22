@@ -39,8 +39,24 @@
                 <th>Tipe</th>
                 <th>Buyer</th>
                 <th>Address</th>
-                <th colspan=3>Aksi</th>
+                <th colspan=3>Action</th>
             </tr>
+        <?php
+            function checkPayment($email){
+                // Deklarasi ulang koneksi karena fungsi connect tidak bisa dipanggil
+                $DB_Location = "localhost";
+                $DB_Username = "root";
+                $DB_Password = "";
+                $DB_DBName = "aerostreet";
+                $connection = mysqli_connect($DB_Location,$DB_Username,$DB_Password,$DB_DBName);
+                $db = mysqli_query($connection, "SELECT * FROM payment WHERE email='$email';");
+                $result = mysqli_fetch_assoc($db);
+                if($result!=null)
+                    return $result['payment_img'];
+                else
+                    return "errorHandle.html";
+            }
+        ?>
         <?php foreach ($order as $row) : ?>
             <tr>
                 <td><img width="150" height="150" src="<?= $row['img']?>" alt=""></td>
@@ -49,7 +65,7 @@
                 <td><?= $row['uname']?> </td> 
                 <td><?= $row['harga']?></td>
                 <td><?= $row['address']?></td>
-                <td><a href="<?=$row['img']?>">See Payment of Proof</a></td>
+                <td><a href="<?=checkPayment($row['email']);?>">See Proof of Payment</a></td>
                 <form action="" method="POST">
                     <input type="number" hidden name="idOrder" value="<?= $row['id_order']; ?>">
                     <td><button name="complete" class="btn btn-md btn-primary">Mark as Done</button></td>
