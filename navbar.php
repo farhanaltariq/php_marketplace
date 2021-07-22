@@ -38,10 +38,10 @@ else
             </button>
             <div class="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a style="margin-left: 50px;" class="nav-link" href="index.php"><b>HOME</b></a>
-                    <a style="margin-left: 50px;" class="nav-link" aria-current="page" href="home.php"><b>PRODUCT</b></a>
-                    <a style="margin-left: 50px;" class="nav-link" href="<?= strtolower($text) ?>.php"><b><?= $text ?></b></a>
-                    <a style="margin-left: 50px;" class="nav-link" href="https://api.whatsapp.com/send?phone=6281230447023&text=Hai%20Farhan,%20kamu%20sangat%20tampan."><b>CONTACT</b></a>
+                    <a style="margin-left: 50px;" class="nav-link" href="index.php">HOME</a>
+                    <a style="margin-left: 50px;" class="nav-link" aria-current="page" href="home.php">PRODUCT</a>
+                    <a style="margin-left: 50px;" class="nav-link" href="<?= strtolower($text) ?>.php"><?= $text ?></a>
+                    <a style="margin-left: 50px;" class="nav-link" href="https://api.whatsapp.com/send?phone=6281230447023&text=Hai%20Farhan,%20kamu%20sangat%20tampan.">CONTACT</a>
                 </div>
                 <a href="mybag.php"><img src="./style/img/bag.png" style="width: 25px; height: 25px; margin-top: 5px; margin-left: 50px; margin-right: 50px;"></a>
             </div>
