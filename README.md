@@ -8,3 +8,6 @@
  Tegar Waskito  
  Ankaa Fauzan  
  Rachmad Fauzi  
+
+#disclaimer  
+Source code dapat diunduh secara gratis, tetapi segala image resource sepenuhnya bukan milik kami.
