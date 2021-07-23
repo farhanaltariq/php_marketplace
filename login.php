@@ -32,13 +32,13 @@
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
                     </div>
                 <div class="mb-3">
-                    <a class="hover" href="hehe.php" style="padding-right: 10px;">Forgot your password ?</a>
-                    <button type="submit" class="btn btn-light" style="margin-left: 30px" name="login">login</button>
+                    <!-- <a class="hover" href="hehe.php" style="padding-right: 10px;">Forgot your password ?</a> -->
+                    <button type="submit" class="btn btn-light" style="margin-left: 30px; float: right" name="login">login</button>
                 </div>
             </form>
             <div class="newacc">
             Don't have an account ? create your account <a style="color:orange;" href="signup.php">here</a>
-        </div>
+            </div>
         </div>
         
     </div>
