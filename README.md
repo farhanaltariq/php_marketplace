@@ -1,13 +1,14 @@
-# php_marketplace
- Tugas Akhir PRPL Semester 4 Universitas Ahmad Dahlan  
- Mulai dibuat tanggal 14 Juni 2021  
- Selesai dibuat tanggal : ...    
- 
- Kontributor :  
- Farhan Altariq  
- Tegar Waskito  
- Ankaa Fauzan  
- Rachmad Fauzi  
+# php_marketplace  
+Final Project Introduction to Software Engineering  
+4th Semester of Ahmad Dahlan University    
+Started on June 14, 2021  
+Finished on July 27, 2021  
+
+Contributors:  
+Farhan Altariq  
+Tegar Waskito  
+Anka Fauzan  
+Rachmad Fauzi  
 
 #disclaimer  
-Source code dapat diunduh secara gratis, tetapi segala image resource sepenuhnya bukan milik kami.
+The source code can be used for free, but all image resources are completely not ours.   
