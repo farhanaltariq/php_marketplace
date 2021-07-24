@@ -29,17 +29,18 @@
           $fnm = $_FILES["image"]["name"];    // get the image name in $fnm variable
           $dst = "./all_images/".$var3.$fnm;  // storing image path into the {all_images} folder with 32 characters hex number and file name
           $dst_db = "all_images/".$var3.$fnm; // storing image path into the database with 32 characters hex number and file name
+          //this is for validating file extension
           $split = explode(".", $fnm);
           $extenstion = $split[1];
           $allowed = array("jpg", "png", "jpeg", "webp");
           if (!in_array($extenstion, $allowed)) {
             echo "<center><h4>Extension Not Allowed</h4></center>";
           }
+          //if file extension allowed then add to databases
           else{
             move_uploaded_file($_FILES["image"]["tmp_name"],$dst);  // move image into the {all_images} folder with 32 characters hex number and image name
           
             $check = mysqli_query($connect,"insert into product(tipe, harga, ukuran, stok,img) values('$_POST[Type]', '$_POST[Price]', '$_POST[Size]', '$_POST[Stock]','$dst_db')");  // executing insert query
-            //mysqli_close($db);  // close connection 
             if($check)
               header('location:admin.php');
           }  
