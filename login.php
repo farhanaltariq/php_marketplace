@@ -36,13 +36,7 @@
                     <button type="submit" class="btn btn-light" style="margin-left: 30px; float: right" name="login">login</button>
                 </div>
             </form>
-            <div class="newacc">
-            Don't have an account ? create your account <a style="color:orange;" href="signup.php">here</a>
-            </div>
-        </div>
-        
-    </div>
-</body>
+            
 <?php
     //check if login form are clicked
     if(isset($_POST['login'])){
@@ -93,4 +87,10 @@
     }
 }
 ?>
+<div class="newacc">
+            Don't have an account ? create your account <a style="color:orange;" href="signup.php">here</a>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
