@@ -40,7 +40,6 @@
             echo "<script>window.location.replace('mybag.php');</script>";
           }
         
-          mysqli_close($db);  // close connection 
         }
       ?>
       <div class='container position-absolute text-center start-50 top-50 translate-middle'>
@@ -57,6 +56,7 @@
             <input type="file" name="image" Required><br><br>
             <input type="submit" name="submit" value="Upload">
       </form>
+      <center>*Note : If you wrong uploading file at first attempt, please contact administrator</center>
       </div>
       </div>
       </body>

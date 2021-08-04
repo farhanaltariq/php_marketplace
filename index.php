@@ -1,4 +1,6 @@
 <?php
+ini_set('session.cache_limiter','public');
+session_cache_limiter(false);
     session_start();
     include_once("connection.php");
     //call navbar
@@ -15,7 +17,7 @@
     <!--BUTTON-->
     <div class="container position-absolute top-50 start-50 translate-middle text-center">
         <div class="jumbotron">
-            <img src="./style/img/logo1.png" alt="" class="brand">
+            <img src="./style/img/pink.jpg" alt="" class="brand">
             <br>
             <a class="btn btn-lg" href="login.php" role="button"><b>SHOP NOW</b></a>
         </div>

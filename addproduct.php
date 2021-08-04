@@ -1,4 +1,6 @@
 <?php
+ini_set('session.cache_limiter','public');
+session_cache_limiter(false);
   session_start();
   include_once("navbar.php");
   include_once("connection.php"); // Using database connection file here
@@ -11,7 +13,6 @@
       <!DOCTYPE html>
       <html>
       <head>
-        <title>AeroStreet</title>
         <link rel="stylesheet" href="./style/loginStyle.css">
       </head>
       <body style='background: black; color: white'>

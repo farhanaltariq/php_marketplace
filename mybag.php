@@ -1,4 +1,6 @@
 <?php
+ini_set('session.cache_limiter','public');
+session_cache_limiter(false);
     session_start();
     include_once("connection.php");
     mv();
@@ -11,7 +13,7 @@
         header("location:mybag.php");    
     }
 ?>
-<div style="height: 70px; background: black;"><?=include_once("navbar.php");?></div>
+<div style="height: 70px; background: black;"><?php include_once("navbar.php");?></div>
 <style>
     body{
         background-color: lightgrey;
