@@ -49,8 +49,8 @@ session_cache_limiter(false);
             echo "</div>";
     } else{
         //validating account data
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = mysqli_real_escape_string($connect, $_POST['email']);
+        $password = mysqli_real_escape_string($connect, $_POST['password']);
         $qry = mysqli_query($connect, "SELECT * FROM user WHERE email = '$email' AND password = md5('$password')");
         $check = mysqli_num_rows($qry);
         $checkstatus = mysqli_fetch_assoc($qry);
