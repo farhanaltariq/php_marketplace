@@ -1,4 +1,6 @@
 <?php
+ini_set('session.cache_limiter','public');
+session_cache_limiter(false);
     session_start();
     include_once("connection.php");
     //if already logged in, then redirect to product page
@@ -36,13 +38,7 @@
                     <button type="submit" class="btn btn-light" style="margin-left: 30px; float: right" name="login">login</button>
                 </div>
             </form>
-            <div class="newacc">
-            Don't have an account ? create your account <a style="color:orange;" href="signup.php">here</a>
-            </div>
-        </div>
-        
-    </div>
-</body>
+            
 <?php
     //check if login form are clicked
     if(isset($_POST['login'])){
@@ -53,8 +49,8 @@
             echo "</div>";
     } else{
         //validating account data
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = mysqli_real_escape_string($connect, $_POST['email']);
+        $password = mysqli_real_escape_string($connect, $_POST['password']);
         $qry = mysqli_query($connect, "SELECT * FROM user WHERE email = '$email' AND password = md5('$password')");
         $check = mysqli_num_rows($qry);
         $checkstatus = mysqli_fetch_assoc($qry);
@@ -93,4 +89,10 @@
     }
 }
 ?>
+<div class="newacc">
+            Don't have an account ? create your account <a style="color:orange;" href="signup.php">here</a>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
